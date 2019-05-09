@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+      <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.tablehead{
+			    color: #fff;
+			    background-color: #385d7f !important;
+			    border-color: #454d55;
+            }
+		.loader{
+			width: 50px;
+			height: 50px;
+			border: 3px solid #eee;
+			border-bottom: 2px solid #000;
+			border-radius: 50%;
+			animation: 1s ease-in-out spin infinite;
+			position: relative;
+			left: 50%;
+			top: 70px;
+		}
+		@keyframes spin{
+			from { transform: rotate(0deg); }
+			to { transform: rotate(360deg); }  
+		}
+		div#loading {
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    margin-top: -50px;
+		    margin-left: -50px;
+		    width: 150px;
+		    height: 150px;
+		    z-index: 9999;
+		    background: url(https://www.tutorialspoint.com/cg/images/loading.gif) no-repeat;
+		    background-color: transparent;
+		    visibility: visible;
+  }
+	</style>
+</head>
+<body>
+
+<div class="container-fluid">
+	<h3 class="text-center text-info mt-4">Welcome To Admin Panel</h3>
+	<div class="alert alert-info text-center" role="alert">
+<i class="fa "></i> List of All Users 
+</div>
+	<span class="ml-4">Click here to get the list of All users</span>
+	
+
+	<button type="button" id="showbtn" class="btn btn-outline-info ml-2">Get List</button>
+	<div id="main_cont" style="display: none;">
+		
+<table class="table mt-4 table-hover">
+  <thead class="tablehead">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Message</th>
+    </tr>
+  </thead>
+  <tbody id="detail"></tbody>  
+</table>
+	<div id="loading" style="top: 50%; left: 45%; visibility: visible;"></div>
+	</div>
+<!-- <div class="loader"></div>	 -->
+
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
+<script>
+	 var config = {
+        apiKey: "AIzaSyACcCs7CTUHRPHpAoJI4HrXr_I8IR76-TM",
+        authDomain: "ayur-ever.firebaseapp.com",
+        databaseURL: "https://ayur-ever.firebaseio.com",
+        projectId: "ayur-ever",
+        storageBucket: "ayur-ever.appspot.com",
+        messagingSenderId: "890991686526"
+      };
+      firebase.initializeApp(config);
+      $('#showbtn').click(function(){
+      	$("#main_cont").show();
+	var ref = firebase.database().ref("users");
+	var tr = "";
+	ref.on("value", function(snapshot) {
+		let val = snapshot.val();
+		let keys = Object.keys(val);
+		console.log(val, keys);
+		for (var i = 0; i < keys.length; i++) {
+			console.log(keys[i]);
+			tr += `<tr class="">
+				<td>${val[keys[i]].name}</td>
+				<td>${val[keys[i]].email}</td>
+				<td>${val[keys[i]].phone}</td>
+				<td>${val[keys[i]].message}</td>
+			</tr>`;
+		}
+		// $('.loader').hide();
+		$('div#loading').hide();
+
+		$("#detail").html(tr);
+	}, function (error) {
+	   console.log("Error: " + error.code);
+	});
+      })
+
+</script>
+</body>
+</html>

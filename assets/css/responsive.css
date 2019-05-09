@@ -1,0 +1,535 @@
+/* For only large Layout: 1920px. */
+
+@media only screen and (min-width: 1201px) and (max-width: 1920px) {}
+
+/*It is for  medium Layout: 1280px. */
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+    .header_area .mainmenu ul li {
+        margin-right: 0px;
+    }
+
+    .why_chooses_area {
+        background-size: 145%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+    }
+
+    .our_single_facility h4 {
+        font-size: 18px;
+    }
+
+    .single_portfolio_item .portfolio_overlay {
+        padding: 18%;
+    }
+
+    .single_price_table .price_content a.price_btn {
+        padding: 12px;
+    }
+
+    .slicknav_menu {
+        display: none;
+    }
+
+    .welcome_banner_bg h2 {
+        font-size: 50px;
+    }
+
+}
+
+/* It is for  tablet Layout: 768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .logo {
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .header_area .mainmenu ul li {
+        margin-right: 0px;
+    }
+
+    .header_area .mainmenu ul li a {
+        padding: 10px;
+    }
+
+    .header_area .mainmenu {
+        text-align: left;
+    }
+
+    .single_welcome_slide h2,
+    .welcome_banner_bg h2 {
+        font-size: 40px;
+    }
+
+    .single_welcome_slide p,
+    .welcome_banner_bg p {
+        font-size: 14px;
+    }
+
+    .welcome_hero_slider_area .owl-dots {
+        right: 35px;
+    }
+
+    .key_informations_area .key_information_single_content {
+        padding: 30px;
+    }
+
+    .key_informations_area .key_information_single_content h3 {
+        font-size: 22px;
+    }
+
+    .key_informations_area .key_information_single_content:nth-child(2) a.key_btn {
+        padding: 10px 15px;
+    }
+
+    .about_content {
+        margin-bottom: 30px;
+    }
+
+    .our_single_facility h4 {
+        font-size: 18px;
+    }
+
+    .our_single_facility_wrapper {
+        padding-right: 0px;
+    }
+
+    .why_chooses_area {
+        background-image: none;
+    }
+
+    .single_fact h4 {
+        font-size: 16px;
+    }
+
+    .single_fact .fact_number {
+        font-size: 28px;
+    }
+
+    .single_portfolio_item .portfolio_overlay {
+        padding: 18%;
+    }
+
+    .single_portfolio_item .portfolio_overlay a.image_popup {
+        margin-bottom: 5px;
+    }
+
+    .hospital_video_section a {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hospital_video_section {
+        margin-top: 30px;
+        border-radius: 0px;
+    }
+
+    .single_doctor_section {
+        margin-bottom: 30px;
+    }
+
+    .single_price_table {
+        margin-bottom: 30px;
+    }
+
+    .map_area {
+        height: 500px;
+    }
+
+    .single_news_medicamp {
+        margin: 0 65px 30px;
+    }
+
+    .slicknav_menu {
+        display: none;
+    }
+
+    .hospital_video_section.style2 {
+        border-radius: 0px;
+    }
+
+    .hospital_video_section.style2 a {
+        left: 50%;
+    }
+}
+
+/* mobile Layout: 320px. */
+
+@media only screen and (max-width: 767px) {
+
+
+.header_top_section {
+    display: none;
+}
+    .sidebar_header_menu_area {
+        width: 300px;
+        right: -300px;
+        height: 670px;
+    }
+
+    .sidebar_header_menu_area.show {
+        right: 0px;
+        overflow: scroll;
+    }
+
+    .gmail_section,
+    .phone_section {
+        text-align: center;
+    }
+
+    .gmail_section {
+        margin-bottom: 12px;
+    }
+
+    .single_welcome_slide h2,
+    .welcome_banner_bg h2 {
+        font-size: 20px;
+    }
+
+    .single_welcome_slide p,
+    .welcome_banner_bg p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .key_informations_area .key_information_single_content {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .about_content h3 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .about_content p {
+        text-align: center;
+    }
+
+    .about_content {
+        margin-bottom: 30px;
+    }
+
+    .section_title h2 {
+        font-size: 20px;
+    }
+
+    .our_single_facility_wrapper {
+        padding-right: 15px;
+    }
+
+    .why_chooses_area {
+        background-image: none;
+    }
+
+    .our_single_facility h4 {
+        font-size: 18px;
+    }
+
+    .single_fact {
+        margin-bottom: 40px;
+    }
+
+    .portfolio_menu ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .hospital_video_section,
+    .hospital_video_section.style2 {
+        border-radius: 0;
+        height: 500px;
+        margin-bottom: 30px;
+    }
+
+    .appoinment_form_section {
+        margin-bottom: 30px;
+        padding: 0 20px;
+    }
+
+    .hospital_video_section a,
+    .hospital_video_section.style2 a {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .single_doctor_section {
+        margin-bottom: 30px;
+    }
+
+    .single_price_table {
+        margin-bottom: 30px;
+    }
+
+    .single_news_medicamp {
+        margin-bottom: 30px;
+    }
+
+    .map_area {
+        height: 500px;
+    }
+
+    .contact_form_area .contact_form_title > p {
+        padding: 0;
+    }
+
+    .contact_info_section {
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .call_to_action_area .call_number_content span {
+        font-size: 16px;
+    }
+
+    .call_to_action_area .call_number_content i {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        height: auto;
+        line-height: inherit;
+        font-size: 30px;
+        border: none;
+    }
+
+    .call_to_action_area .call_number_content {
+        padding-top: 55px;
+    }
+
+    .appointment_btn {
+        text-align: center;
+        margin-top: 15px;
+    }
+    .slicknav_menu {
+        display: block;
+    }
+
+    /* mobile menu */
+    .slicknav_nav a {
+        text-transform: capitalize;
+    }
+
+    .slicknav_menu {
+        background: transparent;
+        position: absolute;
+        z-index: 9;
+        right: 12px;
+        top: -2px;
+        display: block;
+    }
+
+    ul.slicknav_nav {
+        background-color: #0060C5;
+        width: 300px;
+        padding-top: 13px;
+        position: relative;
+        left: 10px;
+    }
+
+    .slicknav_btn {
+        background-color: #0060C5;
+        margin-bottom: 18px;
+    }
+
+    .slicknav_menu .slicknav_menutxt {
+        text-shadow: none;
+    }
+
+    .slicknav_nav a:hover {
+        background-color: #333;
+        color: #fff;
+        border-radius: 0px;
+    }
+
+    .logo {
+        width: 50%;
+    }
+
+}
+
+/* wide mobile Layout: 480px. */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    .sidebar_header_menu_area {
+        width: 300px;
+        right: -300px;
+    }
+    .gmail_section,
+    .phone_section {
+        text-align: center;
+    }
+
+    .gmail_section {
+        margin-bottom: 12px;
+    }
+
+    .single_welcome_slide h2 {
+        font-size: 20px;
+    }
+
+    .single_welcome_slide p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .key_informations_area .key_information_single_content {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .about_content h3 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .about_content p {
+        text-align: center;
+    }
+
+    .about_content {
+        margin-bottom: 30px;
+    }
+
+    .section_title h2 {
+        font-size: 20px;
+    }
+
+    .our_single_facility_wrapper {
+        padding-right: 15px;
+    }
+
+    .why_chooses_area {
+        background-image: none;
+    }
+
+    .our_single_facility h4 {
+        font-size: 18px;
+    }
+
+    .single_fact {
+        margin-bottom: 40px;
+    }
+
+    .portfolio_menu ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .hospital_video_section {
+        border-radius: 0;
+        height: 500px;
+    }
+
+    .appoinment_form_section {
+        margin-bottom: 30px;
+    }
+
+    .hospital_video_section a {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .single_doctor_section {
+        margin-bottom: 30px;
+    }
+
+    .single_price_table {
+        margin-bottom: 30px;
+    }
+
+    .single_news_medicamp {
+        margin-bottom: 30px;
+    }
+
+    .map_area {
+        height: 500px;
+    }
+
+    .contact_form_area .contact_form_title > p {
+        padding: 0;
+    }
+
+    .contact_info_section {
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .call_to_action_area .call_number_content span {
+        font-size: 16px;
+    }
+
+    .call_to_action_area .call_number_content i {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        height: auto;
+        line-height: inherit;
+        font-size: 30px;
+        border: none;
+    }
+
+    .call_to_action_area .call_number_content {
+        padding-top: 55px;
+    }
+
+    .appointment_btn {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .slicknav_menu {
+        display: block;
+    }
+    /* mobile menu */
+    .slicknav_nav a {
+        text-transform: capitalize;
+    }
+
+    .slicknav_menu {
+        background: transparent;
+        position: absolute;
+        z-index: 9;
+        right: 12px;
+        top: 18px;
+        display: block;
+    }
+
+    ul.slicknav_nav {
+        background-color: #0060C5;
+        width: 300px;
+        padding-top: 13px;
+        position: relative;
+        left: 10px;
+    }
+
+    .slicknav_btn {
+        background-color: #0060C5;
+        margin-bottom: 18px;
+    }
+
+    .slicknav_menu .slicknav_menutxt {
+        text-shadow: none;
+    }
+
+    .slicknav_nav a:hover {
+        background-color: #333;
+        color: #fff;
+        border-radius: 0px;
+    }
+
+    .logo {
+        width: 50%;
+    }
+
+}
