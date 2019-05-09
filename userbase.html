@@ -4,9 +4,30 @@
 	<title></title>
       <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+
+
+
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<style type="text/css">
+		#datatable_wrapper input{
+			padding: 5px;
+			border: 1px solid #000;
+			border-radius: 4px;
+			outline: none;
+		}
+		#datatable_wrapper label{
+			color: #07090a;
+		}
 		.tablehead{
 			    color: #fff;
 			    background-color: #385d7f !important;
@@ -28,46 +49,114 @@
 			to { transform: rotate(360deg); }  
 		}
 		div#loading {
-		    position: absolute;
+		  	position: fixed;
 		    top: 50%;
 		    left: 50%;
 		    margin-top: -50px;
 		    margin-left: -50px;
 		    width: 150px;
 		    height: 150px;
-		    z-index: 9999;
+		    z-index: 99;
 		    background: url(https://www.tutorialspoint.com/cg/images/loading.gif) no-repeat;
 		    background-color: transparent;
 		    visibility: visible;
-  }
+ 			 }
+ 			 
+ 			 
+ 			 button.dt-button.buttons-copy.buttons-html5.copyButton {
+			    color: #fff !important;
+			    background-color: #17a2b8 !important;
+			    border-color: #17a2b8 !important;
+			    display: inline-block;
+			    font-weight: 400;
+			    background-image: none !important;
+			     border-radius: 4px;
+			     transition: 0.2s;
+			     padding: 8px 24px;
+				}
+				button.dt-button.buttons-copy.buttons-html5.copyButton:hover{
+					color: #17a2b8 !important;
+					background-color:  #fff !important;
+				}
+				button.dt-button.buttons-excel.buttons-html5.excelButton {
+			    color: #fff;
+			    background-color: #28a745;
+			    border-color: #28a745;
+			    background-image: none !important;
+			    border-radius: 4px;
+			     padding: 8px 24px;
+			    transition: 0.2s;
+               }
+               button.dt-button.buttons-excel.buttons-html5.excelButton:hover{
+               	color: #28a745;
+			    background-color:#fff;
+               }
+               button.dt-button.buttons-csv.buttons-html5.csvButton {
+			    color: #212529 !important;
+    			background-color: #ffc107 !important;
+    			border-color: #ffc107 !important;
+			    background-image: none !important;
+			    border-radius: 4px;
+			     padding: 8px 24px;
+			    transition: 0.2s;
+               }
+               button.dt-button.buttons-csv.buttons-html5.csvButton:hover{
+               	 color: #ffc107 !important;
+    			background-color:#212529!important; 
+    			border-color: #ffc107;
+               }
+               button.dt-button.buttons-pdf.buttons-html5.pdfButton{
+               	color: #fff !important;
+    			background-color: #dc3545 !important;
+    			border-color: #dc3545 !important;
+    			 background-image: none !important;
+			    border-radius: 4px;
+			     padding: 8px 24px;
+			    transition: 0.2s;
+               }
+               button.dt-button.buttons-pdf.buttons-html5.pdfButton:hover{
+               	color: #dc3545 !important;
+    			background-color:  #fff !important;
+               }
 	</style>
 </head>
 <body>
 
 <div class="container-fluid">
-	<h3 class="text-center text-info mt-4">Welcome To Admin Panel</h3>
-	<div class="alert alert-info text-center" role="alert">
-<i class="fa "></i> List of All Users 
-</div>
-	<span class="ml-4">Click here to get the list of All users</span>
-	
+	<div class="row">
+		<div class="col-md-12 col-xs-12">
+			<h3 class="text-center text-info mt-4">Welcome To Admin Panel</h3>
+			<div class="alert alert-info text-center" role="alert">
+				<i class="fa "></i> List of All Users 
+			</div>
+			<span class="ml-4">Click here to get the list of All users</span>
+			
 
-	<button type="button" id="showbtn" class="btn btn-outline-info ml-2">Get List</button>
-	<div id="main_cont" style="display: none;">
-		
-<table class="table mt-4 table-hover">
-  <thead class="tablehead">
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Message</th>
-    </tr>
-  </thead>
-  <tbody id="detail"></tbody>  
-</table>
-	<div id="loading" style="top: 50%; left: 45%; visibility: visible;"></div>
+			<button type="button" id="showbtn" class="btn btn-outline-info ml-2">Get List</button>
+		</div>
+	</div>	
+	
+	<div class="row">
+		<div class="col-md-12 col-xs-12">
+			<div id="main_cont" style="display: none;">
+			<button type="button" id="export" class="btn btn-outline-danger ml-2 mb-2 mt-1">Export As</button>
+					<table id="datatable" class="table mt-4 table-hover">
+					  <thead class="tablehead">
+					    <tr>
+					      <th scope="col">Name</th>
+					      <th scope="col">Email</th>
+					      <th scope="col">Phone</th>
+					      <th scope="col">Message</th>
+					    </tr>
+					  </thead>
+					  <tbody id="detail"></tbody>  
+					</table>
+
+					<div id="loading" style="visibility: visible;"></div>
+		</div>
+		</div>
 	</div>
+		
 <!-- <div class="loader"></div>	 -->
 
 </div>
@@ -80,7 +169,51 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 
+
+<!-- jquerty cdns -->
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+ <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+ <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+
+<!-- jquerty cdns -->
+
 <script>
+
+	$('#export').on('click',function() {
+
+	
+			$('#datatable').DataTable( {
+        dom: 'Bfrtip',
+       
+               buttons: {
+        buttons: [
+            { extend: 'copy', className: 'copyButton' },
+            { extend: 'excel', className: 'excelButton' },
+            { extend: 'csv', className: 'csvButton' },
+            { extend: 'pdf', className: 'pdfButton' },
+
+        ]
+    }
+
+
+             } );
+
+			// $('#datatable').DataTable( {
+			// 	dom: 'Bfrtip',	
+			//     buttons: [
+			//         'pdfHtml5'
+			//     ]
+			// } );
+
+	
+    
+} );
+
 	 var config = {
         apiKey: "AIzaSyACcCs7CTUHRPHpAoJI4HrXr_I8IR76-TM",
         authDomain: "ayur-ever.firebaseapp.com",
@@ -89,11 +222,14 @@
         storageBucket: "ayur-ever.appspot.com",
         messagingSenderId: "890991686526"
       };
+
       firebase.initializeApp(config);
+
       $('#showbtn').click(function(){
       	$("#main_cont").show();
 	var ref = firebase.database().ref("users");
 	var tr = "";
+
 	ref.on("value", function(snapshot) {
 		let val = snapshot.val();
 		let keys = Object.keys(val);
