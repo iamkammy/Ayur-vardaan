@@ -422,6 +422,56 @@
    myFunction(x) ;
    // x.addListener(myFunction);
 
+ document.onkeydown = function(e) {
+                          if(event.keyCode == 123) {
+                             return false;
+                          }
+                          if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                             return false;
+                          }
+                          if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                             return false;
+                          }
+                          if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                             return false;
+                          }
+                          if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                             return false;
+                          }
+                        }
+         
+         // Initialize Firebase
+             var config = {
+               apiKey: "AIzaSyACcCs7CTUHRPHpAoJI4HrXr_I8IR76-TM",
+               authDomain: "ayur-ever.firebaseapp.com",
+               databaseURL: "https://ayur-ever.firebaseio.com",
+               projectId: "ayur-ever",
+               storageBucket: "ayur-ever.appspot.com",
+               messagingSenderId: "890991686526"
+             };
+             firebase.initializeApp(config);
+             
+             var ref = firebase.database().ref('users');
+         
+         $('#firebase-form').submit(function(e){
+            e.preventDefault();
+          let obj = {};
+           $(".firebase-input").each(function() {
+               obj[$(this).attr('id')] = $(this).val();    
+           });
+           
+           console.log(obj);
+           ref.push(obj);
+            swal({
+                  title: "Successfully submitted Form !",
+                  text: "Ayur Vardaan Team Will Contact You Soon!",
+                  icon: "success",
+                  button: "ok!",
+                });
+            $('#firebase-form input').val('');
+             $('#firebase-form textarea').val('');
+         });
+
 </script>
 </body>
 </html>
