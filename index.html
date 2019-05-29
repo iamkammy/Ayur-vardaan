@@ -714,7 +714,8 @@
             e.preventDefault();
           let obj = {};
            $(".firebase-input").each(function() {
-               obj[$(this).attr('id')] = $(this).val();    
+               obj[$(this).attr('id')] = $(this).val();
+               obj['dt'] = Date.now();    
            });
            
            console.log(obj);

@@ -129,6 +129,12 @@
                	color: #dc3545 !important;
     			background-color:  #fff !important;
                }
+			 .table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    word-break: break-all;
+      }
 	</style>
 </head>
 <body>
@@ -151,17 +157,20 @@
 		<div class="col-md-12 col-xs-12">
 			<div id="main_cont" style="display: none;">
 			<button type="button" id="export" class="btn btn-outline-danger ml-2 mb-2 mt-1">Export As</button>
-					<table id="datatable" class="table mt-4 table-hover">
+			<div class="table-responsive">
+					<table id="datatable" style="table-layout: fixed;" class="table mt-4 table-hover">
 					  <thead class="tablehead">
 					    <tr>
-					      <th scope="col">Name</th>
+					      <th width="200px" scope="col">Name</th>
 					      <th scope="col">Email</th>
 					      <th scope="col">Phone</th>
-					      <th scope="col">Message</th>
+								<th scope="col">Message</th>
+								<th scope="col">Date </th>
 					    </tr>
 					  </thead>
 					  <tbody id="detail"></tbody>  
 					</table>
+				</div>
 
 					<div id="loading" style="visibility: visible;"></div>
 		</div>
@@ -171,8 +180,6 @@
 <!-- <div class="loader"></div>	 -->
 
 </div>
-
-
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -211,7 +218,6 @@
         ]
     }
 
-
              } );
 
 			// $('#datatable').DataTable( {
@@ -221,8 +227,6 @@
 			//     ]
 			// } );
 
-	
-    
 } );
 
 	 var config = {
@@ -244,14 +248,20 @@
 	ref.on("value", function(snapshot) {
 		let val = snapshot.val();
 		let keys = Object.keys(val);
-		console.log(val, keys);
+		console.log(val);
+		console.log(val[keys[keys.length-1]])
 		for (var i = 0; i < keys.length; i++) {
 			// console.log(keys[i]);
+			let tarik = new Date(val[keys[i]].dt).toString().slice(0,15);
+			let samay = new Date(val[keys[i]].dt).toLocaleTimeString();
+
 			tr += `<tr class="">
 				<td>${val[keys[i]].name}</td>
 				<td>${val[keys[i]].email}</td>
 				<td>${val[keys[i]].phone}</td>
 				<td>${val[keys[i]].message}</td>
+				<td>${tarik} <p class="small">${samay}</p> </td>
+
 			</tr>`;
 		}
 		// $('.loader').hide();
@@ -260,6 +270,13 @@
 		$("#detail").html(tr);
 	}, function (error) {
 		alert("Error:" + error.code);
+		swal({
+  title: "Oops !!!",
+  text: `${error.code}`,
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+});
 	   console.log("Error: " + error.code);
 	});
 	
