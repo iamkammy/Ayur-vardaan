@@ -633,6 +633,7 @@
                            </div>
                         </div>
                      </form>
+                     
                   </div>
                </div>
             </div>
@@ -728,6 +729,11 @@
                 });
              $('#firebase-form input').val('');
              $('#firebase-form textarea').val('');
+         });
+
+         $('#firebase-form').mouseenter(function(e){
+
+            console.log(e.target);
          });
          
       </script>
